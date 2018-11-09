@@ -1,16 +1,21 @@
 import React from "react";
-import RightPane from "./component/RightPane";
-import LeftPane from "./component/LeftPane";
+import Pane from "./component/Pane";
+import NewContext from "./context/NewContext";
 
-import "./App.css";
+class App extends React.Component {
+  state = {
+    text: "hi, there?"
+  };
 
-const App = () => {
-  return (
-    <div className="panes">
-      <LeftPane />
-      <RightPane />
-    </div>
-  );
-};
+  render() {
+    return (
+      <NewContext.Provider value={this.state.text}>
+        <div className="panes">
+          <Pane />
+        </div>
+      </NewContext.Provider>
+    );
+  }
+}
 
 export default App;
