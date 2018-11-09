@@ -1,6 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-const NewContext = React.createContext({ input: PropTypes.object });
+const NewContext = React.createContext();
 
 export default NewContext;
