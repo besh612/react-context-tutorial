@@ -7,10 +7,17 @@ class App extends React.Component {
     text: "hi, there?"
   };
 
+  handleChange = event => {
+    this.setState({ text: event.target.value });
+  };
+
   render() {
+    const { text } = this.state;
+
     return (
-      <NewContext.Provider value={this.state.text}>
+      <NewContext.Provider value={{ text }}>
         <div className="panes">
+          <input value={text} onChange={() => this.handleChange()} />
           <Pane />
         </div>
       </NewContext.Provider>
